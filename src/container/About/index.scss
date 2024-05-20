@@ -1,0 +1,44 @@
+/* index.css */
+
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+  }
+  .text-center h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #343a40;
+  }
+  
+  .lead {
+    font-size: 1.25em;
+    color: #6c757d;
+  }
+  
+  .list-group-item {
+    background-color: #ffffff;
+    border: none;
+    padding: 15px 20px;
+    font-size: 1em;
+    color: #495057;
+  }
+  
+  .list-group-item strong {
+    color: #343a40;
+  }
+  
+  .mb-4 h2 {
+    font-size: 1.75em;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    color: #343a40;
+  }
+  
+  .mb-4 p {
+    font-size: 1em;
+    color: #495057;
+    line-height: 1.6;
+  }
+  
