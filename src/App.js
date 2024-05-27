@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import BlogPage from './container/Blog/BlogPage';
 import DetailBlog from './container/Blog/DetailBlog';
 import DetailProductPage from './container/DetailProduct/DetailProductPage';
@@ -31,7 +31,29 @@ import Introduction from './container/About/About';
 import VoucherHomePage from './container/Voucher/VoucherHomePage';
 
 function App() {
+  useEffect(() => {
+    // Function to handle keydown event
+    const handleKeydown = (event) => {
+      if (event.key === 'F12' || (event.ctrlKey && event.shiftKey && event.key === 'I')) {
+        event.preventDefault();
+      }
+    };
 
+    // Function to handle contextmenu event (right-click)
+    const handleContextmenu = (event) => {
+      event.preventDefault();
+    };
+
+    // Add event listeners
+    document.addEventListener('keydown', handleKeydown);
+    document.addEventListener('contextmenu', handleContextmenu);
+
+    // Cleanup event listeners on component unmount
+    return () => {
+      document.removeEventListener('keydown', handleKeydown);
+      document.removeEventListener('contextmenu', handleContextmenu);
+    };
+  }, []);
   return (
     <Router>
       <Switch>

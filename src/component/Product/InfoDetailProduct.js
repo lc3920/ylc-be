@@ -69,15 +69,13 @@ function InfoDetailProduct(props) {
             <div className="col-lg-6">
                 <div className="s_product_img">
                     <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
-                        <div>
-                            <ol className="carousel-indicators">
+                    <ol className="carousel-indicators">
                                 {arrDetail.productImage && arrDetail.productImage.map((item, index) => (
                                     <li key={index} data-target="#carouselExampleIndicators" data-slide-to={index} className={index === 0 ? "active" : ""}>
                                         <img height="60px" className="w-100" src={item.image} alt="" />
                                     </li>
                                 ))}
                             </ol>
-                        </div>
                         <div className="carousel-inner">
                             {arrDetail.productImage && arrDetail.productImage.map((item, index) => (
                                 <div key={index} onClick={() => openPreviewImage(item.image)} style={{ cursor: 'pointer' }} className={`carousel-item ${index === 0 ? 'active' : ''}`}>

@@ -148,11 +148,25 @@ const UpdateProductDetailSizeService = (data) => {
 const DeleteProductDetailSizeService = (data) => {
     return axios.delete(`/api/delete-product-detail-size`, data)
 }
-const getProductFeatureService = (limit) => {
-    return axios.get(`/api/get-product-feature?limit=${limit}`)
+const getProductFeatureService = async (limit) => {
+    const res = await axios.get(`/api/get-product-feature?limit=${limit}`);
+    if (res.errCode === 0) {
+        let data = res.data.filter(item => item.statusData.code === "S1")
+        return {
+            data: data,
+            errCode: 0
+        }
+    }
 }
-const getProductNewService = (limit) => {
-    return axios.get(`/api/get-product-new?limit=${limit}`)
+const getProductNewService = async (limit) => {
+    const res = await axios.get(`/api/get-product-new?limit=${limit}`)
+    if (res.errCode === 0) {
+        let data = res.data.filter(item => item.statusData.code === "S1")
+        return {
+            data: data,
+            errCode: 0
+        }
+    }
 }
 const getProductShopcartService = (data) => {
     return axios.get(`/api/get-product-shopcart?userId=${data.userId}&limit=${data.limit}`)

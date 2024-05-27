@@ -9,7 +9,7 @@ function ItemProduct(props) {
             <div style={{ cursor: 'pointer' }} className="single-product">
                 <Link to={`/detail-product/${props.id}`}>
                     <div style={{ width: props.width, height: props.height }} className="product-img">
-                        <img className="img-fluid w-100" src={props.img} alt={props.name} />
+                        <img className="img-fluid w-100" style={{ height: '380px' }} src={props.img} alt={props.name} />
                         <div className="p_icon">
                             <button>
                                 <i className="ti-eye" />
